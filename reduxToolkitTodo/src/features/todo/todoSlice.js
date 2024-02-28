@@ -20,15 +20,6 @@ export const todoSlice = createSlice({
         removeTodo: (state, action) => {
             state.todos = state.todos.filter((todo) => todo.id !== action.payload )
         },
-        editTodo: (state, action) => {
-            const { id, newText } = action.payload;
-            // Find the index of the todo item with the given id
-            const index = state.todos.findIndex(todo => todo.id === id);
-            // If the todo item exists, update its text
-            if (index !== -1) {
-              state.todos[index].text = newText;
-            }
-          }
     }
 })
 
